@@ -35,8 +35,8 @@ window.onload=function(){
             ly=my-dy;
             toward=ly>0?'bottom':'top';
             box.style.transition="none";
-            box.style.transform="translateY("+(ly+moveY)+"px)";
-            box.style.webkitTransform="translateY("+(ly+moveY)+"px)";
+            box.style.transform="translate3d(0,"+(ly+moveY)+"px,0)";
+            box.style.webkitTransform="translate3d(0,"+(ly+moveY)+"px,0)";
         }
         document.addEventListener(mouseup,Up);
         function Up (e){
@@ -56,12 +56,12 @@ window.onload=function(){
                 }
                 moveY=-i*oh;
                 box.style.transition="transform .6s";
-                box.style.transform="translateY("+moveY+"px)";
-                box.style.webkitTransform="translateY("+moveY+"px)";
+                box.style.transform="translate3d(0,"+moveY+"px,0)";
+                box.style.webkitTransform="translate3d(0,"+moveY+"px,0)";
             }else {
                 box.style.transition="transform .6s";
-                box.style.transform="translateY("+moveY+"px)";
-                box.style.webkitTransform="translateY("+moveY+"px)";
+                box.style.transform="translate3d("+moveY+"px)";
+                box.style.webkitTransform="translate3d(0,"+moveY+"px,0)";
             }
             document.removeEventListener(mousemove,Move);
             document.removeEventListener(mouseup,Up);
