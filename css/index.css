@@ -105,16 +105,16 @@ html {
   width: 100%;
   color: #fff;
   font-size: 14px;
-  padding: 6px 24px;
+  padding: 8px 24px;
 }
 .header .nav .nav-bar .nav-right {
   border: 0;
 }
 .nav-show {
-  animation: navShow 1s forwards;
+  animation: navShow .6s forwards;
 }
 .nav-hidden {
-  animation: navHidden 1s forwards;
+  animation: navHidden .6s forwards;
 }
 @keyframes navShow {
   0% {
