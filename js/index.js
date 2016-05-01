@@ -87,4 +87,20 @@ window.onload=function(){
             }
         }
     });
+
+    //移动端导航
+    var btn=document.querySelector(".btn");
+    console.log(btn);
+    var navBar=document.querySelector(".nav-bar");
+    console.log(navBar);
+    var flag=true;
+    btn.onclick=function(){
+        if (flag==true) {
+            navBar.className="nav-bar nav-show";
+            flag=false;
+        }else if (flag==false) {
+            navBar.className="nav-bar nav-hidden";
+            flag=true;
+        }
+    }
 };

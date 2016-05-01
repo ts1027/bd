@@ -50,7 +50,7 @@ body,html{
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 18px;
     .img{
       height: 100%;
       float: none;
@@ -77,9 +77,54 @@ body,html{
       float: right;
     }
     .nav-bar{
-      display: none;
+      transform: scaleY(0);
+      transform-origin: 0 0;
       float: none;
+      margin-right: -18px;
+      margin-left: -18px;
+      padding-bottom: 10px;
+      background: rgba(22,139,216,1);
+      .nav-left,.nav-right{
+        height: 100%;
+        border-bottom: 1px solid #fff;
+        padding: 10px 0;
+        li{
+          width: 100%;
+          a{
+            display: block;
+            width: 100%;
+            color: #fff;
+            font-size: 14px;
+            padding: 6px 24px;
+          }
+        }
+      }
+      .nav-right{
+        border: 0;
+      }
     }
+  }
+}
+.nav-show{
+  animation: navShow 1s forwards;
+}
+.nav-hidden{
+  animation: navHidden 1s forwards;
+}
+@keyframes navShow {
+  0%{
+    transform: scaleY(0);
+  }
+  100%{
+    transform: scaleY(1);
+  }
+}
+@keyframes navHidden {
+  0%{
+    transform: scaleY(1);
+  }
+  100%{
+    transform: scaleY(0);
   }
 }
 @media screen and (min-width: 1000px) {
@@ -104,14 +149,19 @@ body,html{
         display: none;
       }
       .nav-bar{
-        display: block;
+        transform: none;
         width: 880px;
         height: 100%;
         float: left;
+        margin: 0;
+        padding: 0;
+        animation: none;
         .nav-left{
           height: 100%;
           float: left;
+          padding: 0;
           padding-left: 60px;
+          border: none;
           li{
             width: 100px;
             height: 100%;
@@ -119,6 +169,7 @@ body,html{
             a{
               display: block;
               width: 100%;
+              padding: 0;
               padding-top: 32px;
               color: #fff;
               font-size: 16px;
@@ -129,14 +180,19 @@ body,html{
         .nav-right{
           height: 100%;
           float: right;
+          margin: 0;
+          padding: 0;
+          border: 0;
           li{
             float: left;
+            width: auto;
             height: 100%;
             padding: 36px 10px 0;
             a{
               display: block;
               color: #fff;
               font-size: 12px;
+              padding: 0;
             }
           }
         }

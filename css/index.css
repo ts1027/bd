@@ -52,7 +52,7 @@ html {
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 18px;
 }
 .header .nav .img {
   height: 100%;
@@ -81,8 +81,56 @@ html {
   float: right;
 }
 .header .nav .nav-bar {
-  display: none;
+  transform: scaleY(0);
+  transform-origin: 0 0;
   float: none;
+  margin-right: -18px;
+  margin-left: -18px;
+  padding-bottom: 10px;
+  background: #168bd8;
+}
+.header .nav .nav-bar .nav-left,
+.header .nav .nav-bar .nav-right {
+  height: 100%;
+  border-bottom: 1px solid #fff;
+  padding: 10px 0;
+}
+.header .nav .nav-bar .nav-left li,
+.header .nav .nav-bar .nav-right li {
+  width: 100%;
+}
+.header .nav .nav-bar .nav-left li a,
+.header .nav .nav-bar .nav-right li a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 24px;
+}
+.header .nav .nav-bar .nav-right {
+  border: 0;
+}
+.nav-show {
+  animation: navShow 1s forwards;
+}
+.nav-hidden {
+  animation: navHidden 1s forwards;
+}
+@keyframes navShow {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes navHidden {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
 }
 @media screen and (min-width: 1000px) {
   .header {
@@ -108,15 +156,20 @@ html {
     display: none;
   }
   .header .nav .nav-bar {
-    display: block;
+    transform: none;
     width: 880px;
     height: 100%;
     float: left;
+    margin: 0;
+    padding: 0;
+    animation: none;
   }
   .header .nav .nav-bar .nav-left {
     height: 100%;
     float: left;
+    padding: 0;
     padding-left: 60px;
+    border: none;
   }
   .header .nav .nav-bar .nav-left li {
     width: 100px;
@@ -126,6 +179,7 @@ html {
   .header .nav .nav-bar .nav-left li a {
     display: block;
     width: 100%;
+    padding: 0;
     padding-top: 32px;
     color: #fff;
     font-size: 16px;
@@ -134,9 +188,13 @@ html {
   .header .nav .nav-bar .nav-right {
     height: 100%;
     float: right;
+    margin: 0;
+    padding: 0;
+    border: 0;
   }
   .header .nav .nav-bar .nav-right li {
     float: left;
+    width: auto;
     height: 100%;
     padding: 36px 10px 0;
   }
@@ -144,6 +202,7 @@ html {
     display: block;
     color: #fff;
     font-size: 12px;
+    padding: 0;
   }
 }
 /* 第一屏 */
