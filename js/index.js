@@ -42,7 +42,7 @@ window.onload=function(){
         function Up (e){
             var etime= e.timeStamp;
             var lt=etime-stime;
-            if (Math.abs(ly)>=oh/2||lt<100&&Math.abs(ly)>20){
+            if (Math.abs(ly)>=oh/3||lt<100&&Math.abs(ly)>20){
                 if (toward=='bottom') {
                     i--;
                     if (i<0){
@@ -90,17 +90,37 @@ window.onload=function(){
 
     //移动端导航
     var btn=document.querySelector(".btn");
-    console.log(btn);
     var navBar=document.querySelector(".nav-bar");
-    console.log(navBar);
     var flag=true;
     btn.onclick=function(){
         if (flag==true) {
             navBar.className="nav-bar nav-show";
+            if (flag1==false){
+                loginBox.className="header-login-box nav-hidden";
+                flag1=true;
+            }
             flag=false;
         }else if (flag==false) {
             navBar.className="nav-bar nav-hidden";
             flag=true;
+        }
+    };
+
+    //移动端登录
+    var login=document.querySelector(".user-icon");
+    var loginBox=document.querySelector(".header-login-box");
+    var flag1=true;
+    login.onclick=function(){
+        if (flag1==true) {
+            loginBox.className="header-login-box nav-show";
+            if (flag==false){
+                navBar.className="nav-bar nav-hidden";
+                flag=true;
+            }
+            flag1=false;
+        }else if (flag1==false) {
+            loginBox.className="header-login-box nav-hidden";
+            flag1=true;
         }
     }
 };

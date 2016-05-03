@@ -68,16 +68,16 @@ html {
   background-size: 80%;
 }
 .header .nav .btn,
-.header .nav .login {
+.header .nav .user-icon {
   display: block;
   height: 100%;
   width: 44px;
   background-position: center;
-  background-size: 28px;
+  background-size: 22px;
   background-repeat: no-repeat;
   float: left;
 }
-.header .nav .login {
+.header .nav .user-icon {
   float: right;
 }
 .header .nav .nav-bar {
@@ -116,6 +116,85 @@ html {
 .nav-hidden {
   animation: navHidden .6s forwards;
 }
+.header-login-box {
+  width: 100%;
+  margin-left: -20px;
+  padding: 0 20px;
+  position: absolute;
+  top: 60px;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+}
+.header-login-box .header-login {
+  width: 100%;
+  background-color: #4EBFFC;
+}
+.header-login-box .header-login form {
+  padding: 26px 20px 0;
+  width: 100%;
+  height: 100%;
+}
+.header-login-box .header-login form div {
+  margin-bottom: 20px;
+}
+.header-login-box .header-login form .user,
+.header-login-box .header-login form .psw {
+  height: 40px;
+  background: #fff;
+}
+.header-login-box .header-login form .token {
+  height: 40px;
+}
+.header-login-box .header-login form .token input {
+  border: 0;
+  outline: none;
+  padding: 9px;
+  width: 122px;
+  height: 100%;
+  background: #fff;
+  float: left;
+  font-size: 14px;
+}
+.header-login-box .header-login form .token img {
+  margin-left: 10px;
+  float: left;
+}
+.header-login-box .header-login form .token a {
+  float: left;
+  padding: 10px 0 0 10px;
+  font-size: 12px;
+  color: #fff;
+}
+.header-login-box .header-login form .login-action {
+  height: 86px;
+}
+.header-login-box .header-login form .login-action input {
+  border: 0;
+  background: #ffd850;
+  color: #5C4C12;
+  border-radius: 2px;
+  margin-top: 12px;
+  padding: 0 10px;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  width: 100%;
+  font-family: "microsoft yahei", sans-serif;
+}
+.header-login-box .header-login form .login-action .other {
+  padding: 12px 0 8px;
+  box-sizing: content-box;
+  font-size: 12px;
+}
+.header-login-box .header-login form .login-action .other a {
+  color: #fff;
+}
+.header-login-box .header-login form .login-action .other .ol {
+  float: left;
+}
+.header-login-box .header-login form .login-action .other .or {
+  float: right;
+}
 @keyframes navShow {
   0% {
     transform: scaleY(0);
@@ -149,7 +228,7 @@ html {
     background-position: -2px 10px;
     background-size: 100%;
   }
-  .header .nav .login {
+  .header .nav .user-icon {
     display: none;
   }
   .header .nav .btn {
@@ -203,6 +282,9 @@ html {
     color: #fff;
     font-size: 12px;
     padding: 0;
+  }
+  .header-login-box {
+    display: none;
   }
 }
 /* 第一屏 */
@@ -371,6 +453,84 @@ html {
     right: 17%;
     top: -10px;
     animation: feiji 2.5s linear infinite;
+  }
+  .list1-top-right {
+    position: relative;
+  }
+  .list1-top-right .login {
+    width: 340px;
+    height: 300px;
+    margin: 0;
+    background-color: #4EBFFC;
+    position: absolute;
+    bottom: 36%;
+    right: 0;
+  }
+  .list1-top-right .login form {
+    padding: 26px 20px 0;
+    width: 100%;
+    height: 100%;
+  }
+  .list1-top-right .login form div {
+    margin-bottom: 20px;
+  }
+  .list1-top-right .login form .user,
+  .list1-top-right .login form .psw {
+    height: 40px;
+    background: #fff;
+  }
+  .list1-top-right .login form .token {
+    height: 40px;
+  }
+  .list1-top-right .login form .token input {
+    border: 0;
+    outline: none;
+    padding: 9px;
+    width: 122px;
+    height: 100%;
+    background: #fff;
+    float: left;
+    font-size: 14px;
+  }
+  .list1-top-right .login form .token img {
+    margin-left: 10px;
+    float: left;
+  }
+  .list1-top-right .login form .token a {
+    float: left;
+    padding: 10px 0 0 10px;
+    font-size: 12px;
+    color: #fff;
+  }
+  .list1-top-right .login form .login-action {
+    height: 86px;
+  }
+  .list1-top-right .login form .login-action input {
+    border: 0;
+    background: #ffd850;
+    color: #5C4C12;
+    border-radius: 2px;
+    margin-top: 12px;
+    padding: 0 10px;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    width: 100%;
+    font-family: "microsoft yahei", sans-serif;
+  }
+  .list1-top-right .login form .login-action .other {
+    padding: 12px 0 8px;
+    box-sizing: content-box;
+    font-size: 12px;
+  }
+  .list1-top-right .login form .login-action .other a {
+    color: #fff;
+  }
+  .list1-top-right .login form .login-action .other .ol {
+    float: left;
+  }
+  .list1-top-right .login form .login-action .other .or {
+    float: right;
   }
   .list1-bottom .inner {
     width: 1000px;
