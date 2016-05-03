@@ -650,7 +650,7 @@ html {
   text-align: center;
   font-size: 0;
   transform: translateX(-50px);
-  opacity: 0.4;
+  opacity: 0;
 }
 .list-top-left .words img {
   width: 13%;
@@ -684,7 +684,7 @@ html {
   margin: 0 auto;
   width: 88%;
   transform: translateX(50px);
-  opacity: 0.4;
+  opacity: 0;
 }
 @media screen and (min-width: 1000px) {
   .container {
@@ -772,7 +772,7 @@ html {
   right: 0;
   margin: auto;
   transform: translateX(50px);
-  opacity: 0.4;
+  opacity: 0;
 }
 @media screen and (min-width: 1000px) {
   .list3-bottom {
@@ -818,7 +818,7 @@ html {
     left: -200px;
     top: 28%;
     transform: translateX(50px);
-    opacity: 0.4;
+    opacity: 0;
   }
 }
 .list4 .list4-top .list-top-left {

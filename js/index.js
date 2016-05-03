@@ -54,14 +54,16 @@ window.onload=function(){
                         i=lis.length-1;
                     }
                 }
-                moveY=-i*oh;
-                box.style.transition="transform .6s";
-                box.style.transform="translate3d(0,"+moveY+"px,0)";
-                box.style.webkitTransform="translate3d(0,"+moveY+"px,0)";
+                //moveY=-i*oh;
+                //box.style.transition="transform .6s";
+                //box.style.transform="translate3d(0,"+moveY+"px,0)";
+                //box.style.webkitTransform="translate3d(0,"+moveY+"px,0)";
+                move();
             }else {
-                box.style.transition="transform .6s";
-                box.style.transform="translate3d("+moveY+"px)";
-                box.style.webkitTransform="translate3d(0,"+moveY+"px,0)";
+                //box.style.transition="transform .6s";
+                //box.style.transform="translate3d("+moveY+"px)";
+                //box.style.webkitTransform="translate3d(0,"+moveY+"px,0)";
+                move();
             }
             document.removeEventListener(mousemove,Move);
             document.removeEventListener(mouseup,Up);
@@ -86,6 +88,86 @@ window.onload=function(){
                 lis[3].className=('list4');
             }
         }
+    });
+    function move () {
+        moveY=-i*oh;
+        box.style.transition="transform .6s";
+        box.style.transform="translate3d(0,"+moveY+"px,0)";
+        box.style.webkitTransform="translate3d(0,"+moveY+"px,0)";
+    }
+    var mouse=true;
+    mouseWheel(out,function(){
+        if (mouse==false){
+            return;
+        }
+        mouse=false;
+        i--;
+        if (i<0) {
+            i=0;
+        }
+        //box.style.transition="transform .6s";
+        //box.style.transform="translate3d(0,"+(-i*oh)+"px,0)";
+        //box.style.webkitTransform="translate3d(0,"+(-i*oh)+"px,0)";
+        move();
+        setTimeout(function(){
+            mouse=true;
+            if (i==0){
+                lis[0].className=('list1 active');
+            }else{
+                lis[0].className=('list1');
+            }
+            if (i==1){
+                lis[1].className=('list2 active');
+            }else{
+                lis[1].className=('list2');
+            }
+            if (i==2){
+                lis[2].className=('list3 active');
+            }else{
+                lis[2].className=('list3');
+            }
+            if (i==3){
+                lis[3].className=('list4 active');
+            }else{
+                lis[3].className=('list4');
+            }
+        },500)
+    },function(){
+        if (mouse==false){
+            return;
+        }
+        mouse=false;
+        i++;
+        if (i>lis.length-1) {
+            i=lis.length-1;
+        }
+        //box.style.transition="transform .6s";
+        //box.style.transform="translate3d(0,"+(-i*oh)+"px,0)";
+        //box.style.webkitTransform="translate3d(0,"+(-i*oh)+"px,0)";
+        move();
+        setTimeout(function(){
+            mouse=true;
+            if (i==0){
+                lis[0].className=('list1 active');
+            }else{
+                lis[0].className=('list1');
+            }
+            if (i==1){
+                lis[1].className=('list2 active');
+            }else{
+                lis[1].className=('list2');
+            }
+            if (i==2){
+                lis[2].className=('list3 active');
+            }else{
+                lis[2].className=('list3');
+            }
+            if (i==3){
+                lis[3].className=('list4 active');
+            }else{
+                lis[3].className=('list4');
+            }
+        },500)
     });
 
     //移动端导航
